@@ -1,0 +1,423 @@
+@mixin bg-image(){
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+$white: #ffffff;
+$black: #000000;
+$light: #E6E6E6;
+//
+$color-geosite: #F7931E;
+$color-biosite: #3AB549;
+$color-culturesite: #93278F;
+//
+body {
+    background-color: $black;
+}
+// Support 
+.h-100vh {
+    height: 100vh;
+}
+.flex-1 {
+    flex: 1 0 auto;
+}
+.bg-image {
+    @include bg-image();
+}
+.font-300 {
+    font-weight: 300;
+}
+.font-700 {
+    font-weight: 700;
+}
+.text-sm {
+    font-size: 14px;
+    line-height: 1.2;
+}
+.text-sm-p {
+    font-size: 14px;
+    line-height: 1.4;
+}
+.text-mega {
+    font-size: 5rem;
+}
+.text-xlg {
+    font-size: 3.4rem;
+}
+.text-lg {
+    font-size: 3.2rem;
+}
+.block-grad-1 {
+    background: rgb(0,0,0);
+    background: linear-gradient(43deg, rgba(0,0,0,1) 15%, rgba(0,0,0,0) 100%);
+    padding: 12px 18px;
+    border-radius: 20px;
+    color: #81A3B7;
+}
+// Card
+.card-style-1 {
+    padding: 36px;
+    border-radius: 36px;
+    background-color: rgba(0,0,0,0.4);
+    position: relative;
+    &:before {
+        content: '';
+        position: absolute;
+        top: -3px;
+        left: -3px;
+        right: -3px;
+        bottom: -3px;
+        pointer-events: none;
+        border-radius: 36px;
+        mask-image: linear-gradient(to left, rgba(0,0,0,1), rgba(0,0,0,0));
+        -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1), rgba(0,0,0,0));
+        mask-size: 100% 100%;
+        -webkit-mask-size: 100% 100%;
+        mask-repeat: no-repeat;
+        -webkit-mask-repeat: no-repeat;
+        mask-position: left top, left bottom;
+        -webkit-mask-position: left top, left bottom;
+    }
+    &.card-style-1-main {
+        border: 3px solid #5A183E;
+        &:before {
+            border: 3px solid #DD8A2A; 
+        }
+    }
+    &.card-style-1-geosite {
+        border: 3px solid #DD8A2A;
+        &:before {
+            border: 3px solid #5A183E; 
+        }
+    }
+    &.card-style-1-biosite {
+        border: 3px solid #15571D;
+        &:before {
+            border: 3px solid $color-biosite; 
+        }
+    }
+    &.card-style-1-culturesite {
+        border: 3px solid #4F114C;
+        &:before {
+            border: 3px solid $color-culturesite; 
+        }
+    }
+    &.card-style-1-a {
+        border: 3px solid #5A183E;
+        &:before {
+            border: 3px solid #3AF0F1; 
+        }
+    }
+}
+.card-style-2 {
+    padding: 14px;
+    border-radius: 18px;
+    background-color: rgba(0,0,0,0.4);
+    position: relative;
+    display: block;
+    color: $white;
+    transition: all .14s ease-in-out;
+    &:hover {
+        text-decoration: none;
+        color: $white;
+        transform: scale(.99);
+    }
+    &:before {
+        content: '';
+        position: absolute;
+        top: -3px;
+        left: -3px;
+        right: -3px;
+        bottom: -3px;
+        pointer-events: none;
+        border-radius: 18px;
+        mask-image: linear-gradient(to left, rgba(0,0,0,1), rgba(0,0,0,0));
+        -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1), rgba(0,0,0,0));
+        mask-size: 100% 100%;
+        -webkit-mask-size: 100% 100%;
+        mask-repeat: no-repeat;
+        -webkit-mask-repeat: no-repeat;
+        mask-position: left top, left bottom;
+        -webkit-mask-position: left top, left bottom;
+    }
+    .card-style-img {
+        display: block;
+        position: relative;
+        border-radius: 10px;
+        @include bg-image();
+        background-color: $light;
+        padding-top: 70%;
+    }
+    .h5 {
+        font-size: 19px!important;
+    }
+    &.card-style-2-a {
+        border: 2px solid #5A183E;
+        &:before {
+            border: 2px solid #3AF0F1; 
+        }
+    }
+    &.card-style-2-b {
+        border: 2px solid #5A183E;
+        &:before {
+            border: 2px solid #E8EF47; 
+        }
+    }
+    &.card-style-2-c {
+        border: 2px solid #5A173F;
+        &:before {
+            border: 2px solid #DC46D7; 
+        }
+    }
+}
+// Button 
+.btn-start {
+    display: block;
+    width: 280px;
+    height: 102px;
+    position: relative;
+    color: $white;
+    text-decoration: none;
+    outline: none;
+    @include bg-image();
+    background-image: url('../img/btn-arrow-right.svg');
+    transition: all .14s ease-in-out;
+    span {
+        position: absolute;
+        color: $white;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 48px;
+        transform: translateY(-5px);
+    }
+    &:hover {
+        transform: scale(1.03);
+    }
+}
+.btn-geo,
+.btn-bio,
+.btn-cul,
+.btn-trail {
+    display: block;
+    width: 100%;
+    padding-top: 28%;
+    position: relative;
+    color: $white;
+    text-decoration: none;
+    outline: none;
+    @include bg-image();
+    transition: all .14s ease-in-out;
+    span {
+        position: absolute;
+        color: $white;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 22px;
+        transform: translateY(-3px);
+    }
+    &:hover {
+        transform: scale(1.03);
+    }
+}
+.btn-geo {
+    background-image: url('../img/geosite-btn.svg');
+}
+.btn-bio {
+    background-image: url('../img/bio-btn.svg');
+}
+.btn-cul {
+    background-image: url('../img/culture-btn.svg');
+}
+.btn-trail {
+    background-image: url('../img/geotrail-btn.svg');
+}
+//
+.btn-img {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    transition: all .2s ease-in-out;
+    &:hover {
+        transform: scale(1.03);
+        box-shadow: none;
+        outline: none;
+    }
+    &:focus, &:active {
+        box-shadow: none;
+        outline: none;
+    }
+}
+//
+.btn-tab {
+    border-radius: 38px;
+    background-color: rgba(0,0,0,0.2);
+    border: 2px solid $white;
+    color: $white;
+    height: auto;
+    padding: 0px 24px 2px 24px;
+    font-size: 20px;
+    margin: 0px 4px;
+    outline: none;
+    transition: all .2s ease-in-out;
+    &:hover {
+        color: $white;
+        text-decoration: none;
+        outline: none;
+        box-shadow: none;
+        transform: scale(0.98);
+    }
+    &:focus, &:active {
+        outline: none;
+        box-shadow: none;
+    }
+    &.btn-tab-geosite {
+        &.active {
+            border-color: $color-geosite;
+            background-color: $color-geosite;
+        }
+    }
+    &.btn-tab-biosite {
+        &.active {
+            border-color: $color-biosite;
+            background-color: $color-biosite;
+        }
+    }
+    &.btn-tab-culturesite {
+        &.active {
+            border-color: $color-culturesite;
+            background-color: $color-culturesite;
+        }
+    }
+}
+.btn-slider {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    border-top-right-radius: 24px;
+    border-bottom-right-radius: 24px;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    margin-bottom: 14px;
+    height: 100px;
+    transition: all .2s ease-in-out;
+    .btn-slider-img {
+        display: block;
+        width: 100px;
+        padding-top: 100%;
+        @include bg-image();
+        background-color: $light;
+        position: relative;
+        flex-shrink: 0;
+    }
+    .btn-slider-text {
+        padding: 0px 12px;
+        color: $white;
+        font-weight: 500;
+        font-size: 14px;
+    }
+    &.btn-slider-geosite {
+        background-color: $color-geosite;
+    }
+    &.btn-slider-biosite {
+        background-color: $color-biosite;
+    }
+    &.btn-slider-culturesite {
+        background-color: $color-culturesite;
+    }
+    &:last-child {
+        margin-bottom: 0px;
+    }
+    &:hover {
+        text-decoration: none;
+        color: $white;
+        transform: scale(.98);
+    }
+}
+// Gallery
+.img-gallery {
+    display: block;
+    width: 100%;
+    padding-top: 68%;
+    @include bg-image();
+    background-color: $light;
+}
+// Swiper
+.swiper-pagination {
+    &.style-1 {
+        position: relative;
+        left: inherit;
+        transform: none;
+        .swiper-pagination-bullet {
+            width: 12px;
+            height: 12px;
+            background-color: $white;
+            opacity: .5;
+        }
+        .swiper-pagination-bullet-active {
+            opacity: 1;
+        }
+    }
+}
+// Row
+.row-sm {
+    margin-left: -6px;
+    margin-right: -6px;
+    .col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto {
+        padding-left: 6px;
+        padding-right: 6px;
+    }
+}
+// Pattern
+.pattern-2,
+.pattern-3 {
+    position: absolute;
+}
+.pattern-2 {
+    left: 3px;
+    top: 6px;
+    height: calc(100% - 12px);
+}
+.pattern-3 {
+    top: 4px;
+    right: 4px;
+    width: calc(40% - 4px);
+}
+// Simplebar
+.simplebar-track {
+    background-color: #eeeeee;
+    opacity: 1;
+    right: inherit;
+    left: 0;
+    border-radius: 12px;
+    &.simplebar-vertical {
+        width: 8px;
+    }
+}
+.simplebar-scrollbar {
+    &:before {
+        background-color: #DD8A2A;
+        opacity: 1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+    &.simplebar-visible {
+        &:before {
+            opacity: 1;
+        }
+    }
+}
